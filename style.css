@@ -915,6 +915,20 @@ img.lean {
 
 
 
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-------------------CONTACT--------------------------*/
+
 #contact {
 
   padding-top: 90PX;
@@ -1259,16 +1273,46 @@ span {
     margin: auto;
     display: grid; 
   }
-  .aboutContainer {    
-  border: #000000 1px solid;    
-   /* grid-template-columns: repeat(auto-fit , minmax(330px, 1fr));;*/
-  }
   .aboutLeft { 
-    border: #b43131 solid 1px;
+  
     display: grid;    
   }
 }
+@media (max-width: 400px) {
+  .todoAbout h2{
+    font-weight: 300;
+    font-size: 20px; 
+  }
 
+  .aboutContainer{
+      /*ESTE ES EL PROBLEMA PRINCIPAL*/
+      grid-template-columns: repeat(auto-fit , minmax(200px, 1fr));; 
+  }
+  .aboutLeft, .aboutRight {
+      /*CLAVE MAX-WIDTH, no tengo tiempo 
+      p entender xq*/
+    max-width: 100%;
+    text-align: center;
+  }
+  .aboutLeft h3 {
+    font-size: 15Px; 
+    }
+  .aboutLeft p { 
+    font-size: 13Px;
+  }
+  .aboutRight img {
+    height: 200px;
+  }
+}
+@media (max-width: 400px) {
+  .aboutLeft p { 
+    font-size: 12Px;
+  }
+}
+
+
+/*------------------------------------------------------*/
+/*------SIGUIENTE SECCION--------------------------*/
 
 
 
@@ -1292,59 +1336,14 @@ span {
 
 
 @media (max-width: 550px) {
-  #Referencias, #Servicios, #INTROTEMPLATE,#nav, #About{
+  #Referencias {
     overflow: hidden;
   } 
 }
 
 
-/*********----------------TRATANDO DE REARMAR PARA CELU
 
 
-*/
-@media (max-width: 550px) {
-  #About {
-     border: #eaee11 solid 1px;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow: hidden;
-  }
-  .todoAbout {
-  margin: 0;
-  padding: 0;
-
-  border: #e01ce7 solid 1px;
-  max-width: 100%;
-  height: 100%;
-  }
-  .aboutContainer {
-    
-  box-sizing: border-box;
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 100%;
-  height: 100%;
-  border: pink solid 2px;
-  }
-.aboutLeft { 
-  display: inline-block;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  height: 100%;
-  display: grid;
-  }
-.aboutRight  {
-  border: #b43131 solid 5px;
-    display: inline-block;
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  height: 100%;
-  }
-}
 /****************************************---------------*/
 
 /*------------------------CONTACT MEDIA-------------------*/
