@@ -915,7 +915,139 @@ img.lean {
 
 
 
+#contact {
 
+  padding-top: 90PX;
+  padding-bottom: 10PX;
+  margin: auto;
+  letter-spacing: 2px;
+  min-height: 600px; 
+  background: linear-gradient(to right, #05122a, #15233d );
+ 
+}
+/*------TITULOS contacto y mensaje*/
+#contact h2 {
+  letter-spacing: 10PX;
+  text-transform: uppercase;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color:  rgb(245, 245, 245);
+  padding: 20px 0;
+}
+
+
+
+.contactLeft h3 {
+  /*saqué padding, capaz tenga q volver a ponerle p
+  alinear contactLeft a contactRight*/ 
+  font-weight: 300;
+  font-family: 'Krub', sans-serif;
+  font-size: 15px;
+ 
+}
+
+/*---------        CONTACT CONTAINER ------------------*/
+.contactContainer {
+  max-width: 60%;
+  margin: AUTO;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  }
+
+  /*-------- IZQUIERDAAAAAAAAAAAAAAA*/
+.fa-phone-square-alt, .fa-at  {
+  color: rgba(95, 176, 241);
+  font-weight: 300;
+}
+.whatsapp a {
+  text-decoration: none;
+  color:  rgb(245, 245, 245);
+}
+
+.green-color {
+  font-size: 40px;
+  color:#4FCE5D;
+  }
+.whatsapp {
+    height: 125px;
+   display: flex;
+  }
+  /*ALINEAR VERTICALMENTE AL BOTTOM*/
+.whatsapp a {
+  display: inline-block;
+  align-self: flex-end;
+  transition: .5s;
+
+}
+.whatsapp a:hover { 
+  transition: .5s;
+-webkit-transform: scale(1.05);
+-ms-transform: scale(1.05);
+transform: scale(1.05);
+}
+/*ESTO LO AGREGUE p q cuando este en modo celu
+no este todo pegado a la izq*/
+.contactLeft, .contactRight {
+  padding: 0 10PX;
+}
+
+/*----------------DERECHAAAAAAAAAA*/
+.contactRightSubcontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+
+  
+}
+.contactRightSubcontainer > * { 
+  border-radius: 0.2rem; 
+  font-family: inherit;
+
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+
+/* intenté hacerlo en la clase fullRow y no funcaba, 
+directamente en input hay q poner full width */
+.full {
+  
+  grid-column: 1 /-1;
+  /*originalmente no se xq no se extendia el input y utilicé
+  width:100%, ahora se lo saqué y anda igual LA CDTM */
+}
+/*MUY LOCO, asignandole una class al button type submit no me permitia 
+estilizarlo, tuve q buscar el selector input [type=submit] y recien ahi
+sí OJOOOOOO */
+button[type=submit] {
+  font-family: 'Krub', sans-serif;
+  width: 130px;
+  height: 40px;
+  line-height: 1;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  border-radius: 40px;
+  font-weight: 300;
+  transition: 0.5s;
+  cursor: pointer;
+ 
+  }
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.1rem  #18a096;
+}
+button:hover {
+  color: #0d172a;
+  background: #e4e3d5;
+  transition: 0.5s;
+
+}
 
 
 
@@ -980,38 +1112,6 @@ span {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*------------------MEDIA---------------------------
 ------------------MEDIA---------------------------
 ------------------MEDIA---------------------------
@@ -1034,12 +1134,12 @@ span {
   nav li {
 
     padding: 0px 10px;  
-}
-img.logoFlag {
-  height: 35px;
-  top: 12px;
- right: 70px;
-}
+  }
+  img.logoFlag {
+    height: 35px;
+    top: 12px;
+  right: 70px;
+  }
 .logo {  
   height: 47PX;
 
@@ -1101,22 +1201,19 @@ img.logoFlag {
 
   grid-template-columns: repeat(4, 1fr); ;
   grid-gap: 140px;
-}
-.containerServicios > *{
+  }
+  .containerServicios > *{
   grid-column: span 2;
-}
-.tarjetasServicios:nth-last-child(1){
+  }
+  .tarjetasServicios:nth-last-child(1){
   grid-column-end: 4;
-} 
-
+  } 
 }
 @media (max-width: 1100px) {
-  .containerServicios {
-    
-    
-   display: flex;
-flex-direction: column;
-row-gap: 50px;
+  .containerServicios { 
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
   }
  
   .tarjetasServicios {
@@ -1133,10 +1230,9 @@ row-gap: 50px;
   }
  
   .tarjetasServicios {
-    
-    width: 180px;
-    
+  width: 180px;    
   }
+}
 @media (max-width: 320px){
   .tarjetasServicios {
     padding-left:15PX ;
@@ -1144,6 +1240,7 @@ row-gap: 50px;
     width: 170px;
     
   }
+}
   
 /* ---------DE MI --------------------*/
 @media (max-width: 1400px) {
@@ -1153,27 +1250,22 @@ row-gap: 50px;
     width: 75%;
     margin: auto;
   }
- 
+}
 
 @media (max-width: 858px) {
 
   .todoAbout {
     width: 90% ;
     margin: auto;
-    display: grid;
-    
-    
+    display: grid; 
   }
-  .aboutContainer {
-    
-    border: #000000 1px solid;
-    
+  .aboutContainer {    
+  border: #000000 1px solid;    
    /* grid-template-columns: repeat(auto-fit , minmax(330px, 1fr));;*/
   }
   .aboutLeft { 
     border: #b43131 solid 1px;
-    display: grid;
-    
+    display: grid;    
   }
 }
 
@@ -1200,12 +1292,9 @@ row-gap: 50px;
 
 
 @media (max-width: 550px) {
-  #Referencias, #Servicios,#contact, #INTROTEMPLATE,#nav, footer, #About{
+  #Referencias, #Servicios, #INTROTEMPLATE,#nav, #About{
     overflow: hidden;
-
-  }
-  
- 
+  } 
 }
 
 
@@ -1222,8 +1311,6 @@ row-gap: 50px;
       overflow: hidden;
   }
   .todoAbout {
-   
-   
   margin: 0;
   padding: 0;
 
@@ -1233,14 +1320,13 @@ row-gap: 50px;
   }
   .aboutContainer {
     
-    box-sizing: border-box;
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 100%;
-    height: 100%;
-    
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  height: 100%;
   border: pink solid 2px;
-}
+  }
 .aboutLeft { 
   display: inline-block;
   box-sizing: border-box;
@@ -1249,80 +1335,59 @@ row-gap: 50px;
   max-width: 100%;
   height: 100%;
   display: grid;
-}
+  }
 .aboutRight  {
   border: #b43131 solid 5px;
-  
-  display: inline-block;
+    display: inline-block;
   margin: 0;
   padding: 0;
   max-width: 100%;
   height: 100%;
-}
-
+  }
 }
 /****************************************---------------*/
 
+/*------------------------CONTACT MEDIA-------------------*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 1400px) {
+  .contactRightSubcontainer {
+    grid-template-columns: 1fr; 
+  }
+  .contactContainer {
+    max-width: 75%;
+    margin: auto;
+  }  
+}
+@media (max-width: 1150px) {
+  .contactContainer{
+      grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 858px) {
+  .contactContainer {
+    max-width: 80%;
+    margin: auto;
+  }
+}
+@media (max-width: 360px){
+  .contactContainer{ 
+    max-width: 90%;
+  }
+}
+@media (max-width: 320px){
+  .contactContainer{ 
+    max-width: 100%;
+  }
+  /*asi entra el mail q es todo una palabra*/
+  .contactLeft h3 {
+    letter-spacing: normal;
+    font-size: 16px;
+  }
+  .whatsapp h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
 
 
 
@@ -1334,14 +1399,16 @@ row-gap: 50px;
 }
 @media (max-width: 700px){
 
-  footer {
+  .footer {
     font-size: 14px;
   }
-  @media (max-width: 360px){
-    .footer { 
-      margin: 0 200px;   
-    }
+}
+@media (max-width: 360px){
+  .footer { 
+    
+    margin: 0 200px;   
   }
+}
 
 
 
@@ -1486,7 +1553,7 @@ row-gap: 50px;
     padding-bottom: 130px;
   }
 }
-}}
+
 
 
 
@@ -1594,200 +1661,4 @@ VER WIDTH Q SEA PAREJA EN TODAS LAS SECCIONES
 
 */
 
-}}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#contact {
-  
-  padding-top: 90PX;
-  padding-bottom: 10PX;
-  margin: auto;
-  letter-spacing: 2px;
-  min-height: 600px; 
-  background: linear-gradient(to right, #05122a, #15233d );
- 
-}
-/*------TITULOS contacto y mensaje*/
-#contact h2 {
-  letter-spacing: 10PX;
-  text-transform: uppercase;
-
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  color:  rgb(245, 245, 245);
-  padding: 20px 0;
-}
-
-
-
-.contactLeft h3 {
-  padding: 8x;  
-  font-weight: 300;
-  font-family: 'Krub', sans-serif;
-  font-size: 15px;
- 
-}
-
-/*---------        CONTACT CONTAINER ------------------*/
-.contactContainer {
-  max-width: 60%;
-  margin: AUTO;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-
-  }
-
-  /*-------- IZQUIERDAAAAAAAAAAAAAAA*/
-.fa-phone-square-alt, .fa-at  {
-  color: rgba(95, 176, 241);
-  font-weight: 300;
-}
-.whatsapp a {
-  text-decoration: none;
-  color:  rgb(245, 245, 245);
-}
-
-.green-color {
-  font-size: 40px;
-  color:#4FCE5D;
-  }
-.whatsapp {
-    height: 125px;
-   display: flex;
-  }
-  /*ALINEAR VERTICALMENTE AL BOTTOM*/
-.whatsapp a {
-  display: inline-block;
-  align-self: flex-end;
-  transition: .5s;
-
-}
-.whatsapp a:hover { 
-  transition: .5s;
--webkit-transform: scale(1.05);
--ms-transform: scale(1.05);
-transform: scale(1.05);
-}
-/*ESTO LO AGREGUE p q cuando este en modo celu
-no este todo pegado a la izq*/
-.contactLeft, .contactRight {
-  padding: 0 10PX;
-}
-
-/*----------------DERECHAAAAAAAAAA*/
-.contactRightSubcontainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-
-  
-}
-.contactRightSubcontainer > * { 
-  border-radius: 0.2rem; 
-  font-family: inherit;
-
-  margin-top: 8px;
-  font-size: 15px;
-}
-
-
-/* intenté hacerlo en la clase fullRow y no funcaba, 
-directamente en input hay q poner full width */
-.full {
-  
-  grid-column: 1 /-1;
-  /*originalmente no se xq no se extendia el input y utilicé
-  width:100%, ahora se lo saqué y anda igual LA CDTM */
-}
-/*MUY LOCO, asignandole una class al button type submit no me permitia 
-estilizarlo, tuve q buscar el selector input [type=submit] y recien ahi
-sí OJOOOOOO */
-button[type=submit] {
-  font-family: 'Krub', sans-serif;
-  width: 130px;
-  height: 40px;
-  line-height: 1;
-  font-size: 16px;
-  letter-spacing: 1px;
-  border: 1px solid #ffffff;
-  background: transparent;
-  color: #ffffff;
-  border-radius: 40px;
-  font-weight: 300;
-  transition: 0.5s;
-  cursor: pointer;
- 
-  }
-input:focus, textarea:focus {
-  outline: none;
-  box-shadow: 0 0 0 0.1rem  #18a096;
-}
-button:hover {
-  color: #0d172a;
-  background: #e4e3d5;
-  transition: 0.5s;
-
-}
-
-@media (max-width: 1400px) {
-  .contactRightSubcontainer {
-    grid-template-columns: 1fr; 
-  }
-  .contactContainer {
-    max-width: 75%;
-    margin: auto;
-  }  
-}
-@media (max-width: 1150px) {
-  .contactContainer{
-      grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 858px) {
-  .contactContainer {
-    max-width: 80%;
-    margin: auto;
-  }
-  
-  @media (max-width: 360px){
-    .contactContainer{ 
-      max-width: 90%;
-    }
-    @media (max-width: 320px){
-    .contactContainer{ 
-      max-width: 100%;
-    }
-  
-    /*asi entra el mail q es todo una palabra*/
-    .contactLeft h3 {
-      letter-spacing: normal;
-      font-size: 16px;
-    }
-    .whatsapp h3 {
-      font-size: 20px;
-      letter-spacing: 2px;
-    }
-  
-}
