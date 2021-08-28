@@ -1429,7 +1429,6 @@ span {
 
   .footer {
     font-size: 16px;
-    border: yellowgreen 1px solid;
   }
 }
 @media (max-width: 450px){
