@@ -1,0 +1,1678 @@
+/* si no pones margin 0 de fabrica viene con bordes blanco CCS*/
+/*SI QUERES VER EL BACKSTAGE 
+    border-style:ridge;
+    border-width: 3px;
+    border-color: rgb(138, 23, 23);
+    Opcionalmente se puede poner todo en una misma linea
+    borde: red solid 3px
+*/
+/*color de mi logo original #1c2d4c */
+*{
+  margin:0;
+  scroll-behavior: smooth; 
+  padding: 0;
+
+}
+
+
+
+
+body {
+    background: rgb(243, 238, 238);
+    color: rgb(245, 245, 245);
+    width: 100%;   
+  }
+
+  nav {
+    position: sticky;
+  
+    top: 0;
+    padding: 10PX 150px;   
+    overflow: hidden;
+    background: rgba(95, 176, 241, 0.9);
+    font-size: 25px;
+    letter-spacing: 2px;  
+    height: auto;
+    z-index: 3;  
+  }
+
+  /*---------LOGO DEL NAV -*/
+.logo {  
+  height: 50PX;
+  float: left;
+  }
+img#logo{
+
+  background: #f5f4e5;
+  width: AUTO;
+  padding: 2PX 30PX;
+  border-radius:30PX;
+  /*centrar*/
+  height:100%;
+  display:flex;
+  align-items: center ;  
+  transition: .5s;
+}
+img#logo:hover, img.logoFlag:hover{
+  transition: .5s;
+-webkit-transform: scale(1.05);
+-ms-transform: scale(1.05);
+transform: scale(1.05);
+}
+
+.navWhatsapp {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  background: #f5f4e5;
+  padding: 1px 5px;
+  border-radius: 5px;
+
+  transition: 0.5s;
+  opacity:0.5;
+}
+.navWhatsapp:hover {
+  opacity:1;
+  transition: .5s;
+  
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+
+}
+img.logoFlag {
+  height: 40px;
+  border-radius: 50%;
+ border: #000000 1px solid;
+ transition: .5s;
+ position: absolute;
+ top: 10px;
+ right: 100px;
+}
+
+nav a {
+  font-family: 'Roboto', sans-serif;
+ text-decoration: none;
+ color: #000000;
+}
+nav ul {
+/*remove bullets*/
+list-style-type: none;
+float: right;
+display: flex;
+
+}
+nav li {
+
+
+ margin: 3px;
+ padding: 0px 15px;     
+ line-height: 40px;
+ /*Para controlar height del underline*/ 
+ position: relative;
+}
+.inicioActive {
+  color: white;
+  background: #1c2d4c;
+  padding: 4px 20px;  
+  border-radius: 10px;
+}
+.inicioActive:hover {
+  color: #18a096; 
+}
+.coolEffect::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #334c7a;
+  transition:width 1s;
+  /*Esto lo agregué p controlar la posicion vertical
+  del underline, estaba muy abajo antes*/
+  position: absolute;
+  bottom: 5px;  
+}
+ 
+.coolEffect:hover::after {
+width: 70%;
+transition: width 1s;
+}
+ 
+ 
+nav a:hover{
+  color: #1c2d4c;
+  transition: 1.5s;  
+}
+
+
+
+
+
+
+
+#toggle {
+  display: none;
+}
+
+
+
+
+
+  
+
+
+@media (max-width: 858px) {
+  #toggle {
+    position: fixed;
+    transition: 0.5s;
+    top: 5px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(95, 176, 241, 0.9);
+    cursor: pointer;
+    border-radius: 5px;
+    border: #f5f4e5 3px solid;
+    /*No sé si es necesario pero lo pongo x las dudas
+    xq el boton del menu a veces no funca*/
+    z-index: 4;
+  }
+  #toggle:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  nav {
+    /*Todo esto p alinear el logo*/
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+  }
+ 
+  img#logo {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .logo {
+  height: 50px; 
+  }
+/*-------------------------------*/
+
+  .navWhatsapp {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 1px;
+  }
+  #hola {
+    font-size: 35px;
+  }
+  
+ 
+#toggle {
+    /*alinear la rayita*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+#raya {
+ width: 30px;
+ height: 4px;
+ border-radius: 5px;
+ background: #f5f4e5;
+ transition: all 0.5s ease-in-out;
+
+}
+/*raya arriba y abajo*/
+#raya::before,#raya::after  {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 4px;
+  border-radius: 5px;
+  background: #f5f4e5;
+  z-index: 3;
+  transition: all 0.5s ease-in-out;
+}
+/*raya arriba*/
+#raya::before {
+  transform: translateY(10px);
+}
+/*raya abajo*/
+#raya::after {
+  transform: translateY(-10px);
+}
+
+/*ANIMACION DE las rayas del toggle button*/
+
+
+
+
+#sidebar,  #sidebar > * {
+  all: initial;
+}
+.active {
+  background: initial;
+  /*NO CAMBIAR Q SINO SE CAGA EL MENU, 
+  Se expande un poco. No tengo la menor idea porqué*/
+  padding: 0;
+}
+
+
+#sidebar {
+  z-index: 3;
+  position: fixed;
+  left: -100%;
+  top: 60px;
+  background: rgba(95, 176, 241, 0.9);
+  width: 100%;
+  height: fit-content;
+  transition: 0.5s;
+}
+#sidebar.active {
+  left: 0;
+  transition: .5s;
+}
+
+
+#sidebar ul {
+
+  margin-top: 20px;
+  /*BY DEFAULT UL HAS PADDING AND MARGIN */
+  margin: 0;
+  padding: 0;
+
+}
+#sidebar ul li {
+  list-style:  NONE;
+  padding: 0;
+  text-align: center;
+  transition: 0.5s; 
+
+}
+#sidebar a {
+  color: #f5f4e5;
+  text-decoration: none;
+  transition: 0.5s;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  display:block; 
+  padding: 10PX 0;
+
+}
+
+  #sidebar .coolEffect:hover {
+    color: #1c2d4c;
+    transition: 0.5s; 
+    background: #f5f4e5
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------FOTO INICIO------------------*/
+#INTROTEMPLATE {
+    height: 1000px;
+    width: 100%;
+    background-image: linear-gradient(rgba(28,45,76, 0.8), rgba(0, 0, 0, 0.9)), url("images/facuderecho.jpg");    
+    background-size: cover;
+    /*ESTO HACE Q LA IMAGEN NO SE VAYA AL JORACA CUANDO SE ACHICA*/
+    background-position: center center;
+}
+.overlay{
+  color: white;
+  display: flex;
+  height: 100%;   
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  letter-spacing: 2px;
+  /*Background transparente sin color q use al ppio
+  background: rgba(0,0,0,0.9);
+  */
+}
+.overlay h1 {
+  font-size: 65px;    
+  margin-bottom: 5px;  
+  color: #18a096
+}
+.overlay p {
+  margin: 0;  
+  font-size: 26px;  
+}
+
+
+
+/*-----------------------SERVICIOS--------------------------------*/
+
+
+#Servicios, #About, #Referencias {
+  display: grid;
+  padding: 20px 0;
+  letter-spacing: 2px;
+  margin: 10px 0;
+  
+}
+h3 {
+  font-size: 24px;
+  line-height: 50px;
+}
+
+#Servicios{
+  background: #f5f4e5;
+  margin: 0px;
+  padding-bottom: 100px;
+  padding-top: 70px;
+  color: #1c2d4c;
+  position: relative;
+  z-index: 1; 
+}
+
+
+/* SKEW SHAPE NO ME FUNCABA CON EL NAV, agregué Z-INDEX 2 y listo 
+#Servicios::after{ 
+  position: absolute ;
+  content: "";
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform-origin: bottom left;
+  transform: skewY(2.5deg);  
+}*/
+
+
+
+/*TITULO SERVICIOS*/
+#Servicios .header {
+  font-family: 'Roboto', sans-serif;
+  margin: 40px 0 35px;
+  padding: 5px 10px;
+  font-size: 25px;  
+  align-self: center; 
+  justify-self: center;   
+  background: -webkit-linear-gradient(to right, #1C8079 0%, #18a096 100%);
+  background: -moz-linear-gradient(to right, #1C8079 0%, #18a096 100%);
+  background: linear-gradient(to right, #1C8079 0%, #18a096 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*--------SUBRAYADO--------*/
+hr.lineaServicios {
+  background: linear-gradient(to right, #1c2d4c, #18a096) ;
+  height: 2.5px;
+  border: none;
+  border-radius: 10px;
+  width: 150px;
+  align-self: center;
+  justify-self: center; 
+  margin-bottom: 80px; 
+}
+@media (max-width: 768px) {
+  #Servicios .header{
+    font-size: 20px;
+  }
+  hr.lineaServicios {
+    width: 120px;
+  }
+}
+
+/* ---------------              GRID SERVICIOS ----------------*/
+.containerServicios {
+
+  width: 60%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 250px); ;
+  row-gap: 40px;
+  top: 130px;
+  letter-spacing: 2PX;  
+  
+  justify-content: space-between;
+
+}
+
+.containerServicios > * {
+
+  background: white;
+  padding: 10px 20px;
+  font-family: 'Quicksand', sans-serif;
+  /*box-shadow: 2px 2px 2px rgba(0,0,0,0.1);*/
+  box-shadow: 0 5px 10px #50565d;
+  margin-bottom: 5px;
+  text-align: center;
+  
+  border-radius: 7px;
+  MIN-height: 300px;
+  /*ESTO SE LO PUSE EN RELACION A LA RAYITA DE DE DECORACION*/
+  z-index: 1;
+  }
+
+.containerServicios h3 {
+  margin: 40px auto;
+  background: white;
+  position: relative;
+ 
+  line-height: 40px; 
+  font-weight:300 ;
+  font-size: 20px;  
+}
+.containerServicios h3::after{
+  content: "";
+  width: 40px;
+  height: 30px;
+  background: linear-gradient(to right, white, #18a096);
+  position: absolute;
+  right: -3px;
+  top: -5px;
+  z-index: -1;
+}
+
+.containerServicios h3::BEFORE{
+  content: "";
+  width: 40px;
+  height: 30px;
+  background: linear-gradient(to right, #18a096,white );
+  position: absolute;
+  LEFT: -3px;
+  BOTTOM: -5px;
+  z-index: -1;
+}
+.containerServicios p {
+  margin: 10px 0;
+  color: #50565d;
+  font-weight:300 ;
+  font-size: 15px;
+}
+.containerServicios i {
+  padding-top: 15px;
+  color: #172250;
+  font-size: 30px; 
+}
+
+.tarjetasServicios {
+  position: relative;  
+}
+.semiCirculo {
+  position:absolute;
+  height:60px;
+  width:60px;
+  border-radius:60px;
+  left:50%;
+  margin-left:-30px;
+  top: -30px;
+  background:white;
+  box-shadow: 0px -5px 5px 0px rgba(50, 50, 50, 0.2);
+  transition: 0.8s;
+}
+
+/*-------hover magic-------------*/
+.tarjetasServicios {
+  transition: 0.8s;
+}
+.tarjetasServicios:hover {
+  box-shadow: 8px 8px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px);
+}
+.semiCirculo:hover {
+  box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: 0.5;
+}
+/*----------Rotation --------------*/
+.tarjetasServicios:hover .semiCirculo {
+ transform: rotate(360deg);
+}
+/*--------------------------------------------------------------*/
+/*--------------------------DE-----MI----------------------------------*/
+#About {
+
+  margin: 0px;
+  background: linear-gradient(to right, #05122a, #1c2d4c );
+  color: #f5f4e5;
+}
+.todoAbout {
+  width: 60%;
+  margin: auto;
+  z-index: 2;
+}
+
+/*-----------TITULO DEMI--------*/
+.todoAbout h2{
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  padding: 5px 0;
+  font-size: 29px;
+  margin-top: 90px;
+  margin-bottom: 35px;
+  text-align: center; 
+ text-justify: center;
+  color: white;
+  text-transform: uppercase; 
+}
+
+
+/*---- SUBRAYADO------*/
+hr.reglaAbout {
+  margin: auto;   
+  background: linear-gradient(to right, #1c2d4c, #18a096);
+  height: 2px;
+  border: none;
+  border-radius: 10px;
+  width: 130px;
+  margin-bottom: 50px; 
+
+}
+
+
+/* VER SI MIN MAX 300PX es lo q necesito p q quede
+alineado en modo celu ------------------------- OJO CON ESE 
+MINMAX EN EL GRID TEMPLATE Q FUE EL Q ME CAGABA EL MODO CELU, HABIA OVERFLOW 
+LATERAL XQ LA COLUMNA ERA MUY CHICA? LA VERDAD ES Q NO ENTIENDO 
+XQ NO CRECIA PARA ABAJO*/
+
+.aboutContainer {
+  margin-bottom: 80px;
+  display: GRID;
+  grid-template-columns: repeat(auto-fit , minmax(400px, 1fr));;
+}
+.aboutLeft { 
+  width: 90%;
+  margin: auto;
+  padding-bottom: 40px;
+  font-family: 'Quicksand', sans-serif; 
+}
+.aboutLeft h3 {margin-bottom: 30px;
+color: #18a096; font-weight:300; font-size: 20px; 
+/*Creo q el h tag viene con lineheight de fabrica*/
+line-height: normal;
+}
+.aboutLeft p {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.aboutRight {
+  display: grid;
+  PLACE-items: center  
+}
+.aboutRight > img {
+  
+  display: block;
+  margin: 0 auto;
+  border-radius: 10%;
+  height: 300px;
+  width: auto;
+  border: rgba(95, 176, 241, 0.9) solid 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------*/
+/*-------------------------RECOMENDACIONES------------------------*/
+
+#Referencias {
+  margin: 0;
+  background: #f5f4e5;
+  min-height: 500px;
+  padding-bottom: 100px;
+}
+
+.containerMadreRecomendaciones {
+  width: 60%;
+  margin: auto;
+
+ 
+}
+#Referencias h2{
+  font-family: 'Roboto', sans-serif;
+  padding: 5px 10px;
+  font-size: 29px;
+  margin-top: 90px;
+  margin-bottom: 35px;
+  text-align: center; 
+  text-justify: center;
+  background: -webkit-linear-gradient(to right, #1C8079 0%, #18a096 100%);
+  background: -moz-linear-gradient(to right, #1C8079 0%, #18a096 100%);
+  background: linear-gradient(to right, #1C8079 0%, #18a096 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*---- SUBRAYADO------*/
+hr.lineaRecomendaciones {
+  background: linear-gradient(to right, #1c2d4c, #18a096) ;
+  height: 2px;
+  border: none;
+  border-radius: 10px;
+  width: 130px;
+  margin: auto;
+  margin-bottom: 70px; 
+}
+.containerMayor {
+  /*Capaz con
+  width: 60%;
+  margin: auto;
+  se arregla una parte, pero todavia hay otros problemas*/
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.containerRecomendaciones {
+
+  /*CREO Q ACA HAY UN PROBLEMA, NO RECUERDO
+  COMO LO ARREGLé LA 1ERA VEZ*/
+
+/*Mantiene las flechitas icon en su lugar*/
+  position: relative;
+
+}
+.slide {height: 200px;}
+/*ELppal problema creo es la width del slide container*/
+.containerRecomendaciones  .slide {
+  border-radius: 5px;
+  background:  #1c2d4c ;
+  box-shadow: 0 5px 10px #3337;
+  width: 450px;
+  /*le tuve q sacar el margin, hacia un juego raro con el slide container*/
+  padding: 20px;
+  transform-style: preserve-3d;
+  position: relative;
+  color: #f5f4e5;
+}
+
+.slide .icon{
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 90px;
+  color: #18a096; 
+}
+.user {
+  display: flex;
+  align-items: center;
+}
+.foto{
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  object-fit: cover;
+  background: white;
+  margin: 10px;
+}
+img.lean {
+  padding: 5px;
+  background: #2a497a;
+}
+
+
+.user-info h3 {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  
+  border-radius: 5px;
+  
+}
+.stars {
+  color: rgba(95, 176, 241, 0.9);
+  font-size: 15px;
+}
+.text {
+ 
+    margin-right: 70px;
+  padding-top: 10PX;
+  font-size: 14px;
+  font-style: italic;
+  
+ 
+}
+
+/*-------ARRANCA LA MAGIA DEL SLIDE -----------------*/
+.slide-container {
+  display: none;
+  
+}
+
+.slide-container.active {
+  display: block;
+
+}
+ #prev, #next  {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 20px;
+  background: #1c2d4c;
+  color: #f5f4e5;
+  border: 1px solid #1c2d4c;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px #50565d;
+  transition: 0.5s;
+ }
+ #prev {
+  left: -70px;
+}
+ #next {
+   right: -70px;
+ }
+
+#prev:hover, #next:hover {
+  
+  color: rgba(95, 176, 241);
+  border: 1px rgba(95, 176, 241) solid ;
+  transition: 0.5s;
+   
+}
+.slide-container {
+  animation:slide .4s linear;
+}
+@keyframes slide{
+  0%{
+    transform: rotateX(180deg);
+  }
+}
+.slide > * {
+  animation: slideContent .2s linear .4s backwards;
+} 
+@keyframes slideContent{
+  0%{
+    opacity: 0;
+    transform: scale(.5);
+  }
+}
+/*--------cajita voladora de recomendaciones con sombra ---------*/
+.slide-container {
+  transition: 0.5s;
+}
+.slide-container:hover {
+  box-shadow: 8px 8px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*-------------------CONTACT--------------------------*/
+
+#contact {
+
+  padding-top: 90PX;
+  padding-bottom: 10PX;
+  margin: auto;
+  letter-spacing: 2px;
+  min-height: 600px; 
+  background: linear-gradient(to right, #05122a, #15233d );
+ 
+}
+/*------TITULOS contacto y mensaje*/
+#contact h2 {
+  letter-spacing: 10PX;
+  text-transform: uppercase;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color:  rgb(245, 245, 245);
+  padding: 20px 0;
+}
+
+
+
+.contactLeft h3 {
+  /*saqué padding, capaz tenga q volver a ponerle p
+  alinear contactLeft a contactRight*/ 
+  font-weight: 300;
+  font-family: 'Krub', sans-serif;
+  font-size: 15px;
+ 
+}
+
+/*---------        CONTACT CONTAINER ------------------*/
+.contactContainer {
+  max-width: 60%;
+  margin: AUTO;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  }
+
+  /*-------- IZQUIERDAAAAAAAAAAAAAAA*/
+.fa-phone-square-alt, .fa-at  {
+  color: rgba(95, 176, 241);
+  font-weight: 300;
+}
+.whatsapp a {
+  text-decoration: none;
+  color:  rgb(245, 245, 245);
+}
+
+.green-color {
+  font-size: 40px;
+  color:#4FCE5D;
+  }
+.whatsapp {
+    height: 125px;
+   display: flex;
+  }
+  /*ALINEAR VERTICALMENTE AL BOTTOM*/
+.whatsapp a {
+  display: inline-block;
+  align-self: flex-end;
+  transition: .5s;
+
+}
+.whatsapp a:hover { 
+  transition: .5s;
+-webkit-transform: scale(1.05);
+-ms-transform: scale(1.05);
+transform: scale(1.05);
+}
+/*ESTO LO AGREGUE p q cuando este en modo celu
+no este todo pegado a la izq*/
+.contactLeft, .contactRight {
+  padding: 0 10PX;
+}
+
+/*----------------DERECHAAAAAAAAAA*/
+.contactRightSubcontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+
+  
+}
+.contactRightSubcontainer > * { 
+  border-radius: 0.2rem; 
+  font-family: inherit;
+
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+
+/* intenté hacerlo en la clase fullRow y no funcaba, 
+directamente en input hay q poner full width */
+.full {
+  
+  grid-column: 1 /-1;
+  /*originalmente no se xq no se extendia el input y utilicé
+  width:100%, ahora se lo saqué y anda igual LA CDTM */
+}
+/*MUY LOCO, asignandole una class al button type submit no me permitia 
+estilizarlo, tuve q buscar el selector input [type=submit] y recien ahi
+sí OJOOOOOO */
+button[type=submit] {
+  font-family: 'Krub', sans-serif;
+  width: 130px;
+  height: 40px;
+  line-height: 1;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  border-radius: 40px;
+  font-weight: 300;
+  transition: 0.5s;
+  cursor: pointer;
+ 
+  }
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.1rem  #18a096;
+}
+button:hover {
+  color: #0d172a;
+  background: #e4e3d5;
+  transition: 0.5s;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------*/
+/*------------------------ FOOTER ----------------------------------*/
+
+
+
+
+
+footer {
+
+  font-weight: 300;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 2px;
+  font-size: 15px;
+  background: rgb(0, 0, 0);
+  min-height: 100px;
+  justify-content:center;
+   align-items:center;
+   display: flex;
+}
+
+span {
+  color: rgba(95, 176, 241, 0.9);
+}
+
+
+
+
+/*------------------MEDIA---------------------------
+------------------MEDIA---------------------------
+------------------MEDIA---------------------------
+------------------MEDIA---------------------------
+------------------MEDIA---------------------------
+------------------MEDIA---------------------------
+------------------MEDIA---------------------------
+------------------MEDIA---------------------------*/
+
+/*----------NAV--------------*/
+@media (max-width: 1100px) {
+  nav {
+    padding-left: 10px;
+    padding-right: 100px; 
+  }
+  .navWhatsapp {
+    right: 10px;   
+  }
+  nav li {
+    padding: 0px 10px;  
+  }
+  img.logoFlag {
+    height: 35px;
+    top: 12px;
+    right: 70px;
+  }
+  .logo {  
+  height: 47PX;
+
+  }
+}
+@media (max-width: 858px) {
+  nav {
+    /*Con esto (+ el grid q ya declaré arriba)
+    alineo el logo al centro, ojo no sacar*/
+    padding-left: 0;
+    padding-right: 0; 
+  }
+  .navWhatsapp {
+  top: 11px;
+  }
+  img.logoFlag {
+    height: 32px;
+    top: 12px;
+   right: 50px;
+  }
+  /*Con esto eliminio el underline hover effect*/
+  .coolEffect::after {
+    content: none;
+  }
+  .coolEffect:hover {
+    color: white;
+    transition: 0.3s;
+  }
+  .inicioActive:hover {
+    color: #18a096 !important;
+  }
+}
+@media (max-width: 360px){
+  .logo {  
+    height: 40PX;
+    margin-top: 5px;    
+  }
+  img#logo{
+    width: AUTO;
+    padding: 2PX;
+    border-radius:5PX;
+  }
+  /*en iphone sticky la caga*/
+  nav {
+    position: fixed;
+    width: 100%;
+}
+}
+/*------------------------------------------------*/
+/*-------------------------------------------------*/
+/*INTROTEMPLATE*/
+@media (max-width: 858px) {
+  #INTROTEMPLATE {
+    height: 400PX;
+  }
+  .overlay h1 {
+    font-size: 35px;
+  }
+  .overlay p  {
+    font-size: 23PX;
+  }
+}
+@media (max-width: 700px) {
+  .overlay h1 {
+    margin: 2.5PX;
+    font-size: 30px;
+  }
+  .overlay p  {
+    font-size: 20PX;
+  }
+}
+
+/*---------SERVICIOS-----------------*/
+@media (max-width: 1400px) {
+.containerServicios {
+
+  grid-template-columns: repeat(4, 1fr); ;
+  grid-gap: 140px;
+  }
+  .containerServicios > *{
+  grid-column: span 2;
+  }
+  .tarjetasServicios:nth-last-child(1){
+  grid-column-end: 4;
+  } 
+}
+@media (max-width: 1100px) {
+  .containerServicios { 
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  }
+ 
+  .tarjetasServicios {
+    
+    width: 220px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 360px){
+  .containerServicios{ 
+    margin: 0;
+    width: 100%;
+  }
+ 
+  .tarjetasServicios {
+  width: 180px;    
+  }
+  .containerServicios{ 
+    row-gap: 70px;
+  }
+}
+@media (max-width: 320px){
+  .tarjetasServicios {
+    padding-left:15PX ;
+    padding-right:15PX ;
+    width: 170px;
+  }
+}
+  
+/* ---------DE MI --------------------*/
+@media (max-width: 1400px) {
+  
+
+   .todoAbout {
+    width: 75%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 858px) {
+
+  .todoAbout {
+    width: 90% ;
+    margin: auto;
+    display: grid; 
+  }
+  .aboutLeft { 
+  
+    display: grid;    
+  }
+}
+@media (max-width: 400px) {
+  .todoAbout h2{
+    font-weight: 300;
+    font-size: 30px; 
+  }
+
+  .aboutContainer{
+      /*ESTE ES EL PROBLEMA PRINCIPAL*/
+      grid-template-columns: repeat(auto-fit , minmax(200px, 1fr));; 
+  }
+  .aboutLeft, .aboutRight {
+      /*CLAVE MAX-WIDTH, no tengo tiempo 
+      p entender xq*/
+    max-width: 100%;
+    text-align: center;
+  }
+  .aboutLeft h3 {
+    font-size: 15Px; 
+    }
+  .aboutLeft p { 
+    font-size: 15Px;
+  }
+  .aboutRight img {
+    height: 200px;
+  }
+}
+@media (max-width: 400px) {
+  .aboutLeft p { 
+    font-size: 14Px;
+  }
+}
+
+
+/*------------------------------------------------------*/
+/*------SIGUIENTE SECCION--------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 550px) {
+  #Referencias {
+    overflow: hidden;
+  } 
+}
+
+
+
+
+/****************************************---------------*/
+
+/*------------------------CONTACT MEDIA-------------------*/
+
+@media (max-width: 1400px) {
+  .contactRightSubcontainer {
+    grid-template-columns: 1fr; 
+  }
+  .contactContainer {
+    max-width: 75%;
+    margin: auto;
+  }  
+}
+@media (max-width: 1150px) {
+  .contactContainer{
+      grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 858px) {
+  .contactContainer {
+    max-width: 80%;
+    margin: auto;
+  }
+}
+@media (max-width: 360px){
+  .contactContainer{ 
+    max-width: 90%;
+  }
+}
+@media (max-width: 320px){
+  .contactContainer{ 
+    max-width: 100%;
+  }
+  /*asi entra el mail q es todo una palabra*/
+  .contactLeft h3 {
+    letter-spacing: normal;
+    font-size: 16px;
+  }
+  .whatsapp h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+
+
+
+/*----------- FOOTER-----------------*/
+@media (max-width: 768px) {
+  footer {
+    min-height:50px;    
+  }
+}
+@media (max-width: 700px){
+
+  .footer {
+    font-size: 14px;
+  }
+}
+@media (max-width: 450px){
+  .footer { 
+    border: rgb(235, 107, 224) 1px solid;
+    margin: 10px 200px;   
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+@media (max-width: 858px) {
+
+  /*Esto lo puse para q el slide container no ose excediera y me
+  rompiera las pelotas, sin él el hover efecto se caga
+    .slide-container {
+      margin: 0 ;
+      padding: 0;
+      }
+    .slide {
+      width: 100% !important;
+      margin: auto !important;
+      min-width: 400px; /*MIN WIDTH FUE CLAVE
+      }*/
+  .slide-container {
+    margin: 0 ;
+    padding: 0;
+    }
+  .slide {
+    width: 100% !important;
+    margin: auto !important;
+    min-width: 400px;
+  }
+  .slide .icon{
+    font-size: 70px;
+    right: 10px;
+  }
+  #prev {
+    left: -60px;
+
+  }
+  #next {
+    right: -100px;
+  }
+}
+@media (max-width: 700px){
+  
+ /*Todas las cosas del nivel superior (slider container x ej)
+ las saqué y funca igual, dejé padding y min width*/ 
+  .slide {
+  
+    padding: 0 5px!important;
+
+    min-width: 330px !important;
+    
+    }
+  .foto{
+    width: 80px;
+  
+  }
+  /*Mande las comillas p abajo asi no jodian no se
+  superponian con los textos*/
+  .slide .icon{
+      top: 140px;
+      font-size: 50px;
+     
+  }
+  .user-info h3 {
+    font-size: 18px;
+  }
+  #prev, #next  {
+
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    font-size: 15px;
+  }
+  #prev {
+    left: 25%;
+    top: 120%;
+
+  }
+  #next {
+    right: 25%;
+    top: 120%;
+  }
+  #Referencias {
+  
+    padding-bottom: 130px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+PONER DE MI CUANDO CLICKEO MENU
+
+FOTO DE MI 
+----------------
+
+VER Q EL BOTON LARGUE MSJE ENVIADO CON EXITO; C
+creo q se relaciona con ligar al server
+
+ANIMACION INTRO CON ESTUDIO ROHELAW/PROBAR
+
+Ver el HOVER en celu como hacerlo efectivo con click
+
+EN CAJITAS SERVICIOS EL ICON LO ALINEE A MANO,VER OTRA TECNICAS
+
+VER WIDTH Q SEA PAREJA EN TODAS LAS SECCIONES 
+/BASARSE EN CONTACTO Q TIENE VARIAS SUBDIV
+
+(chequear modo celu margen izq)
+
+*/
+
+
