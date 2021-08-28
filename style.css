@@ -472,11 +472,15 @@ h3 {
   font-size: 25px;  
   align-self: center; 
   justify-self: center;   
+ 
+}
+#Servicios h2 {
   background: -webkit-linear-gradient(to right, #1C8079 0%, #18a096 100%);
   background: -moz-linear-gradient(to right, #1C8079 0%, #18a096 100%);
   background: linear-gradient(to right, #1C8079 0%, #18a096 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
 }
 /*--------SUBRAYADO--------*/
 hr.lineaServicios {
@@ -1264,10 +1268,7 @@ span {
   width: 180px; 
   margin-bottom: 70px;   
   }
-  #Servicios .header{
-    font-size: 18px;
-    border: tomato solid 1px;
-  }
+
 
 }
 @media (max-width: 320px){
@@ -1320,7 +1321,7 @@ span {
     text-align: center;
   }
   .aboutLeft h3 {
-    font-size: 15Px; 
+    font-size: 17Px; 
     }
   .aboutLeft p { 
     font-size: 15Px;
@@ -1428,8 +1429,7 @@ span {
   }
 }
 @media (max-width: 450px){
-  .footer { 
-    
+  .footer {     
     margin: 10px 200px;   
   }
 }
