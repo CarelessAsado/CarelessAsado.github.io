@@ -24,8 +24,7 @@ body {
   }
 
   nav {
-    position: sticky;
-  
+    position: sticky;  
     top: 0;
     padding: 10PX 150px;   
     overflow: hidden;
@@ -490,14 +489,7 @@ hr.lineaServicios {
   justify-self: center; 
   margin-bottom: 80px; 
 }
-@media (max-width: 768px) {
-  #Servicios .header{
-    font-size: 20px;
-  }
-  hr.lineaServicios {
-    width: 120px;
-  }
-}
+
 
 /* ---------------              GRID SERVICIOS ----------------*/
 .containerServicios {
@@ -1251,17 +1243,30 @@ span {
     margin: auto;
   }
 }
+@media (max-width: 768px) {
+  #Servicios .header{
+    font-size: 20px;
+  }
+  hr.lineaServicios {
+    width: 120px;
+  }
+}
 
 @media (max-width: 360px){
   .containerServicios{ 
     margin: 0;
     width: 100%;
+    /*en ios no anda row-gap*/
     row-gap: 0;
   }
  
   .tarjetasServicios {
   width: 180px; 
   margin-bottom: 70px;   
+  }
+  #Servicios .header{
+    font-size: 18px;
+    border: tomato solid 1px;
   }
 
 }
@@ -1270,6 +1275,7 @@ span {
     padding-left:15PX ;
     padding-right:15PX ;
     width: 170px;
+    /*en ios no anda row-gap*/
     margin-bottom: 70px;
   }
 
@@ -1423,7 +1429,7 @@ span {
 }
 @media (max-width: 450px){
   .footer { 
-    border: tomato 1px solid;
+    
     margin: 10px 200px;   
   }
 }
