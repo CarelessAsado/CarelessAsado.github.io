@@ -781,7 +781,8 @@ hr.lineaRecomendaciones {
   position: relative;
 
 }
-.slide {height: 200px;}
+.slide {min-height: 200px;
+  height: fit-content;}
 /*ELppal problema creo es la width del slide container*/
 .containerRecomendaciones  .slide {
   border-radius: 5px;
@@ -833,10 +834,12 @@ img.lean {
 }
 .text {
  
-    margin-right: 70px;
+  margin-right: 70px;
   padding-top: 10PX;
+  padding-bottom: 5px;
   font-size: 14px;
   font-style: italic;
+
   
  
 }
@@ -1662,6 +1665,15 @@ span {
 
 
 /*
+Creo q no anda el smooth scroll en iphone
+Creo q la animacion de ref no anda, ni el menu (ver 
+si es JAVA]
+
+Ver fa en contact
+Alinear contact dcha e izq de nuevo
+
+Ver el HOVER en celu como hacerlo efectivo con click
+
 PONER DE MI CUANDO CLICKEO MENU
 
 FOTO DE MI 
@@ -1672,7 +1684,6 @@ creo q se relaciona con ligar al server
 
 ANIMACION INTRO CON ESTUDIO ROHELAW/PROBAR
 
-Ver el HOVER en celu como hacerlo efectivo con click
 
 EN CAJITAS SERVICIOS EL ICON LO ALINEE A MANO,VER OTRA TECNICAS
 
