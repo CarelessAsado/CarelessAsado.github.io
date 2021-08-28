@@ -1257,13 +1257,15 @@ span {
   .tarjetasServicios {
   width: 180px;    
   }
+  .containerServicios{ 
+    row-gap: 70px;
+  }
 }
 @media (max-width: 320px){
   .tarjetasServicios {
     padding-left:15PX ;
     padding-right:15PX ;
     width: 170px;
-    
   }
 }
   
@@ -1415,8 +1417,8 @@ span {
 }
 @media (max-width: 450px){
   .footer { 
-  
-    margin: 0 200px;   
+    border: yellowgreen 1px solid;
+    margin: 10px 200px;   
   }
 }
 
@@ -1648,10 +1650,6 @@ span {
 
 
 /*
-Redactar recomendaciones
-
- REDACTAR de mí
-
 PONER DE MI CUANDO CLICKEO MENU
 
 FOTO DE MI 
@@ -1661,6 +1659,8 @@ VER Q EL BOTON LARGUE MSJE ENVIADO CON EXITO; C
 creo q se relaciona con ligar al server
 
 ANIMACION INTRO CON ESTUDIO ROHELAW/PROBAR
+
+Ver el HOVER en celu como hacerlo efectivo con click
 
 EN CAJITAS SERVICIOS EL ICON LO ALINEE A MANO,VER OTRA TECNICAS
 
