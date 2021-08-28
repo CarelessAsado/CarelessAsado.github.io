@@ -1256,21 +1256,23 @@ span {
   .containerServicios{ 
     margin: 0;
     width: 100%;
+    row-gap: 0;
   }
  
   .tarjetasServicios {
-  width: 180px;    
+  width: 180px; 
+  margin-bottom: 70px;   
   }
-  .containerServicios{ 
-    row-gap: 70px;
-  }
+
 }
 @media (max-width: 320px){
   .tarjetasServicios {
     padding-left:15PX ;
     padding-right:15PX ;
     width: 170px;
+    margin-bottom: 70px;
   }
+
 }
   
 /* ---------DE MI --------------------*/
@@ -1421,7 +1423,6 @@ span {
 }
 @media (max-width: 450px){
   .footer { 
-    border: rgb(235, 107, 224) 1px solid;
     margin: 10px 200px;   
   }
 }
