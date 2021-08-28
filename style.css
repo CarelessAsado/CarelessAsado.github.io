@@ -1423,6 +1423,7 @@ span {
 }
 @media (max-width: 450px){
   .footer { 
+    border: tomato 1px solid;
     margin: 10px 200px;   
   }
 }
