@@ -1187,14 +1187,18 @@ span {
 @media (max-width: 360px){
   .logo {  
     height: 40PX;
-    margin-top: 5px;
-    
-    }
-    img#logo{
-      width: AUTO;
-      padding: 2PX;
-      border-radius:5PX;
-    }
+    margin-top: 5px;    
+  }
+  img#logo{
+    width: AUTO;
+    padding: 2PX;
+    border-radius:5PX;
+  }
+  /*en iphone sticky la caga*/
+  nav {
+    position: fixed;
+    width: 100%;
+}
 }
 /*------------------------------------------------*/
 /*-------------------------------------------------*/
@@ -1294,7 +1298,7 @@ span {
 @media (max-width: 400px) {
   .todoAbout h2{
     font-weight: 300;
-    font-size: 20px; 
+    font-size: 30px; 
   }
 
   .aboutContainer{
