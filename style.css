@@ -1352,33 +1352,102 @@ span {
 /*------SIGUIENTE SECCION--------------------------*/
 
 
+@media (max-width: 858px) {
 
+  /*Esto lo puse para q el slide container no ose excediera y me
+  rompiera las pelotas, sin él el hover efecto se caga
+    .slide-container {
+      margin: 0 ;
+      padding: 0;
+      }
+    .slide {
+      width: 100% !important;
+      margin: auto !important;
+      min-width: 400px; /*MIN WIDTH FUE CLAVE
+      }*/
+  .slide-container {
+    margin: 0 ;
+    padding: 0;
+    }
+  .slide {
+    width: 100% !important;
+    margin: auto !important;
+    min-width: 400px;
+  }
+  .slide .icon{
+    font-size: 70px;
+    right: 10px;
+  }
+  #prev {
+    left: -60px;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 550px) {
-  #Referencias {
-    overflow: hidden;
-  } 
+  }
+  #next {
+    right: -100px;
+  }
 }
+@media (max-width: 700px){
+  
+ /*Todas las cosas del nivel superior (slider container x ej)
+ las saqué y funca igual, dejé padding y min width*/ 
+  .slide {
+  
+    padding: 0 5px!important;
 
+    min-width: 330px !important;
+    padding-bottom: 5px!important;
+    
+    }
+  .foto{
+    width: 80px;
+  
+  }
+  /*Mande las comillas p abajo asi no jodian no se
+  superponian con los textos*/
+  .slide .icon{
+      top: 140px;
+      font-size: 50px;
+     
+  }
+  .user-info h3 {
+    font-size: 18px;
+  }
+  #prev, #next  {
 
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    font-size: 15px;
+  }
+  #prev {
+    left: 25%;
+    top: 120%;
+
+  }
+  #next {
+    right: 25%;
+    top: 120%;
+  }
+  #Referencias {
+  
+    padding-bottom: 130px;
+  }
+}
+@media (max-width: 420px){
+  .containerMadreRecomendaciones {
+    /*alinea referencias*/
+    width: 100%;
+    margin: auto;
+  }
+  /*TODO ESTO P Q LA CAJA DE REC
+  NO SE DESCONTROLE*/
+  .slide {
+    min-width: 280px !important;
+    width: 100% !important;
+    margin: auto !important;
+    max-width: 280px;
+  }
+}
 
 
 /****************************************---------------*/
@@ -1437,7 +1506,7 @@ span {
        
   }
   .footer {
-    width: 80%; 
+    width: 75%; 
     margin: auto; 
   }
 
@@ -1447,8 +1516,8 @@ span {
 }
 @media (max-width: 450px){
   .footer {     
-    margin: 10px 200px;
-    
+    margin: 10px ;
+    width: 80%;
   }
 }
 
@@ -1515,93 +1584,6 @@ span {
 
 
   
-@media (max-width: 858px) {
-
-  /*Esto lo puse para q el slide container no ose excediera y me
-  rompiera las pelotas, sin él el hover efecto se caga
-    .slide-container {
-      margin: 0 ;
-      padding: 0;
-      }
-    .slide {
-      width: 100% !important;
-      margin: auto !important;
-      min-width: 400px; /*MIN WIDTH FUE CLAVE
-      }*/
-  .slide-container {
-    margin: 0 ;
-    padding: 0;
-    }
-  .slide {
-    width: 100% !important;
-    margin: auto !important;
-    min-width: 400px;
-  }
-  .slide .icon{
-    font-size: 70px;
-    right: 10px;
-  }
-  #prev {
-    left: -60px;
-
-  }
-  #next {
-    right: -100px;
-  }
-}
-@media (max-width: 700px){
-  
- /*Todas las cosas del nivel superior (slider container x ej)
- las saqué y funca igual, dejé padding y min width*/ 
-  .slide {
-  
-    padding: 0 5px!important;
-
-    min-width: 330px !important;
-    
-    }
-  .foto{
-    width: 80px;
-  
-  }
-  /*Mande las comillas p abajo asi no jodian no se
-  superponian con los textos*/
-  .slide .icon{
-      top: 140px;
-      font-size: 50px;
-     
-  }
-  .user-info h3 {
-    font-size: 18px;
-  }
-  #prev, #next  {
-
-    height: 35px;
-    width: 35px;
-    line-height: 35px;
-    font-size: 15px;
-  }
-  #prev {
-    left: 25%;
-    top: 120%;
-
-  }
-  #next {
-    right: 25%;
-    top: 120%;
-  }
-  #Referencias {
-  
-    padding-bottom: 130px;
-  }
-}
-@media (max-width: 420px){
-
-  .containerMadreRecomendaciones {
-    width: 100%;
-    margin: auto;
-  }
-  }
 
 
 
