@@ -1182,6 +1182,10 @@ span {
   .inicioActive:hover {
     color: #18a096 !important;
   }
+  /*corregir padding logo whatsapp*/
+  #hola{
+    padding-left: 2px;
+    }
 }
 @media (max-width: 360px){
   .logo {  
@@ -1197,7 +1201,8 @@ span {
   nav {
     position: fixed;
     width: 100%;
-}
+  }
+  
 }
 /*------------------------------------------------*/
 /*-------------------------------------------------*/
