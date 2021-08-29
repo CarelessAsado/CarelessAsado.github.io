@@ -955,11 +955,11 @@ img.lean {
 
 
 .contactLeft h3 {
-  /*saqué padding, capaz tenga q volver a ponerle p
-  alinear contactLeft a contactRight*/ 
   font-weight: 300;
   font-family: 'Krub', sans-serif;
   font-size: 15px;
+  /* con esto alineé contactLeft con contactRight*/
+  line-height: 47px;
  
 }
 
