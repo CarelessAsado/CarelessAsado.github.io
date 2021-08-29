@@ -425,7 +425,7 @@ nav a:hover{
 /*-----------------------SERVICIOS--------------------------------*/
 
 
-#Servicios, #About, #Referencias {
+#Servicios, #About{
   display: grid;
   padding: 20px 0;
   letter-spacing: 2px;
@@ -726,6 +726,8 @@ line-height: normal;
 /*-------------------------RECOMENDACIONES------------------------*/
 
 #Referencias {
+  padding: 20px 0;
+  letter-spacing: 2px;
   margin: 0;
   background: #f5f4e5;
   min-height: 500px;
@@ -1118,6 +1120,7 @@ footer {
    display: flex;
 }
 
+
 span {
   color: rgba(95, 176, 241, 0.9);
 }
@@ -1425,12 +1428,18 @@ span {
 
 
 /*----------- FOOTER-----------------*/
-@media (max-width: 768px) {
+
+@media (max-width: 500px){
   footer {
-    min-height:50px;    
+ 
+    min-height:50px;  
+   
+       
   }
-}
-@media (max-width: 700px){
+  .footer {
+    width: 80%; 
+    margin: auto; 
+  }
 
   .footer {
     font-size: 16px;
@@ -1438,7 +1447,8 @@ span {
 }
 @media (max-width: 450px){
   .footer {     
-    margin: 10px 200px;   
+    margin: 10px 200px;
+    
   }
 }
 
@@ -1585,6 +1595,13 @@ span {
     padding-bottom: 130px;
   }
 }
+@media (max-width: 420px){
+
+  .containerMadreRecomendaciones {
+    width: 100%;
+    margin: auto;
+  }
+  }
 
 
 
