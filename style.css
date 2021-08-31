@@ -1436,7 +1436,7 @@ span {
 @media (max-width: 420px){
   .containerMadreRecomendaciones {
     /*alinea referencias*/
-    width: 100%;
+    width: 90%;
     margin: auto;
   }
   /*TODO ESTO P Q LA CAJA DE REC
@@ -1445,7 +1445,7 @@ span {
     min-width: 280px !important;
     width: 100% !important;
     margin: auto !important;
-    max-width: 280px;
+    max-width: 340px;
   }
 }
 
