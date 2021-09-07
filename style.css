@@ -820,6 +820,11 @@ img.lean {
   padding: 5px;
   background: #2a497a;
 }
+img.Persico {
+  padding: 5px;
+  background: #172f49;
+  border: 1px white solid;
+}
 
 
 .user-info h3 {
